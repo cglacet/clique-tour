@@ -1,0 +1,8 @@
+README.txt
+setup.py
+clique_tour/__init__.py
+clique_tour.egg-info/PKG-INFO
+clique_tour.egg-info/SOURCES.txt
+clique_tour.egg-info/dependency_links.txt
+clique_tour.egg-info/not-zip-safe
+clique_tour.egg-info/top_level.txt
