@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='clique_tour',
-      version='0.2',
+      version='0.21',
       description='Build a tour of a clique giving a number of node.',
       url='https://github.com/cglacet/clique-tour',
       author='Christian Glacet',

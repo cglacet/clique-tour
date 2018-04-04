@@ -7,7 +7,7 @@ from itertools import combinations
 #
 #       https://math.stackexchange.com/a/16935/451099
 ########################################################################
-def clique_tour(n):
+def eulerian(n):
     if n % 2 == 0:
         raise ValueError("The number of node must be odd, otherwise no euler tour exist.")
 
@@ -25,7 +25,7 @@ def clique_tour(n):
 
     return hamiltonian_paths
 
-def almost_clique_tour(n):
+def almost_eulerian(n):
     if n % 2 == 1:
         raise ValueError("Number of node is odd, use clique_tour() instead of almost_clique_tour, it will produce better results.")
 
@@ -34,18 +34,17 @@ def almost_clique_tour(n):
     # Increment the path shape to "rotate" the hamiltonian path (see stackexchange post)
     for i in range(n//2):
         path = [ (path_shape[p]+i)%n for p in range(len(path_shape)) ]
-        print(path)
         hamiltonian_paths += path
 
     # Close the tour
     hamiltonian_paths += [hamiltonian_paths[0]]
     return hamiltonian_paths
 
-def best_tour_yet(n):
+def build(n):
     if n % 2 == 0:
-        return almost_clique_tour(n)
+        return almost_eulerian(n)
     else:
-        return clique_tour(n)
+        return eulerian(n)
 
 def main(n):
     node_order = best_tour_yet(n)
